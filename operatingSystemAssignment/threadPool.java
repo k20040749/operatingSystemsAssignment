@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class threadPool here.
@@ -5,29 +6,40 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class threadPool
+public class threadPool implements Runnable
 {
     // instance variables - replace the example below with your own
-    private int x;
-
+    private int threadSize;
+    private int numberRunning;
+    private ArrayList<ImageProcessorST> runningTasks;
+    private ArrayList<ImageProcessorST> waitingTasks;
     /**
      * Constructor for objects of class threadPool
      */
-    public threadPool()
+    public threadPool(int size)
     {
-        // initialise instance variables
-        x = 0;
+        threadSize = size;
+        numberRunning = 0;
+        runningTasks = new ArrayList<>();
+        waitingTasks = new ArrayList<>();
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void start() {
+        while (runningTasks.size() < threadSize) {
+            if (waitingTasks.size() > 0){
+                runningTasks.add(waitingTasks.remove(0));
+            }
+        }
     }
+    
+    public void run() {}
+    
+    public void submit(ImageProcessorST task) {
+        waitingTasks.add(task);
+    }
+    
+    public void join() {}
+    
+    public void quit() {}
 }
+    
