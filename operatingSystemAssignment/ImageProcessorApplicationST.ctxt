@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ImageProcessorApplicationST
+comment1.params=stage
+comment1.target=void\ start(javafx.stage.Stage)
+comment2.params=
+comment2.target=java.util.ArrayList\ findImages()
+comment2.text=\n\ This\ method\ expects\ all\ of\ the\ images\ that\ are\ to\ be\ processed\ to\ \n\ be\ in\ a\ folder\ called\ img\ that\ is\ in\ the\ current\ working\ directory.\n\ In\ Eclipse,\ for\ example,\ this\ means\ the\ img\ folder\ should\ be\ in\ the\ project\n\ folder\ (alongside\ src\ and\ bin).\n\ @return\ Info\ about\ the\ images\ found\ in\ the\ folder.\n
+comment3.params=dir
+comment3.target=java.util.Collection\ listFileTree(java.io.File)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

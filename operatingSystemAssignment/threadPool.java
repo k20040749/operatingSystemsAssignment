@@ -32,7 +32,13 @@ public class threadPool implements Runnable
         }
     }
     
-    public void run() {}
+    public void run() {
+        for (ImageProcessorST task:runningTasks) {
+            synchronized(this) {
+                task.run();
+            }
+        }
+    }
     
     public void submit(ImageProcessorST task) {
         waitingTasks.add(task);
