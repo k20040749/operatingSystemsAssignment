@@ -1,7 +1,7 @@
 #BlueJ class context
-comment0.target=ImageProcessorST
+comment0.target=ImageProcessorMT
 comment1.params=image\ filter\ save\ opname
-comment1.target=ImageProcessorST(javafx.scene.image.Image,\ java.lang.String,\ boolean,\ java.lang.String)
+comment1.target=ImageProcessorMT(javafx.scene.image.Image,\ java.lang.String,\ boolean,\ java.lang.String)
 comment1.text=\n\ Constructor.\n\ @param\ image\ The\ image\ to\ process.\n\ @param\ filter\ The\ filter\ to\ use.\n\ @param\ save\ Whether\ to\ save\ the\ new\ image\ or\ not.\n\ @param\ opname\ The\ output\ image\ filename\n
 comment10.params=
 comment10.target=javafx.scene.paint.Color[][]\ getPixelData()

@@ -11,8 +11,8 @@ public class threadPool implements Runnable
     // instance variables - replace the example below with your own
     private int threadSize;
     private int numberRunning;
-    private ArrayList<ImageProcessorST> runningTasks;
-    private ArrayList<ImageProcessorST> waitingTasks;
+    private ArrayList<ImageProcessorMT> runningTasks;
+    private ArrayList<ImageProcessorMT> waitingTasks;
     /**
      * Constructor for objects of class threadPool
      */
@@ -25,22 +25,24 @@ public class threadPool implements Runnable
     }
 
     public void start() {
-        while (runningTasks.size() < threadSize) {
-            if (waitingTasks.size() > 0){
-                runningTasks.add(waitingTasks.remove(0));
+        while (true) {
+            if (runningTasks.size() < threadSize) {
+                if (waitingTasks.size() > 0){
+                    runningTasks.add(waitingTasks.remove(0));
+                }
             }
         }
     }
     
     public void run() {
-        for (ImageProcessorST task:runningTasks) {
+        for (ImageProcessorMT task:runningTasks) {
             synchronized(this) {
                 task.run();
             }
         }
     }
     
-    public void submit(ImageProcessorST task) {
+    public void submit(ImageProcessorMT task) {
         waitingTasks.add(task);
     }
     

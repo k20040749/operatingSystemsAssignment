@@ -9,7 +9,7 @@ import javafx.scene.image.PixelWriter;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
 
-public class ImageProcessorST implements Runnable{
+public class ImageProcessorMT implements Runnable{
 
     private Image image;
     private String opfilename;
@@ -23,7 +23,7 @@ public class ImageProcessorST implements Runnable{
      * @param save Whether to save the new image or not.
      * @param opname The output image filename
      */
-    public ImageProcessorST(Image image, String filter, boolean save, String opname) {
+    public ImageProcessorMT(Image image, String filter, boolean save, String opname) {
 
         this.image = image;
         this.opfilename = opname;
